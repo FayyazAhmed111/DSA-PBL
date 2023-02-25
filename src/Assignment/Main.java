@@ -185,7 +185,7 @@ public class Main {
 					
 					Universities obj = (Universities) arr[i][1];
 					
-					//TO REMOVE '/' FROM THE RANKING FORMAT & PARSING FROM STRING TO INTEGER
+					//TO REMOVE '/' FROM THE RANKING FORMAT IN CSV FILE & PARSING FROM STRING TO INTEGER
 					arr[i][1]=Integer.parseInt(obj.getPr().substring(0, obj.getPr().length()-6));
 				}
 				
@@ -197,19 +197,19 @@ public class Main {
 					stack1.push((String) arr[i][0]);
 				}
 				
-				//check for output
-				for(int i=0;i<arr.length;i++) {
-					System.out.println(stack1.pop());
-				}
-			
-				
 				
 				//*********************PROBLEMS*********************
-				
-				
+				//STILL WORKING ON PROBLEMS 
 				
 				//PROBLEM # 1
-				
+				Scanner scan = new Scanner(System.in);
+				System.out.println("Enter 4 letter keyword: ");
+				String key = scan.nextLine();
+				while(key.length()==4) {
+				if (key.length()!=4) {
+					System.out.println("Key should be 4 letter");	
+				}
+				}
 				
 			}//end of main function
 }//end of Main class

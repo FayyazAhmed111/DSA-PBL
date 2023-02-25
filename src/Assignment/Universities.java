@@ -1,6 +1,6 @@
 package Assignment;
 public class Universities {
-	//********STEP 1********
+	
 	//attributes of university
 	private String name;
 	private String Wraning;

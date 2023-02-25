@@ -18,7 +18,8 @@ public class Main {
 	public static MyStack<String> stack1 = new MyStack<String>(); //Stack with sorted rank
 	
 		public static void main(String[] args) {
-
+				//********STEP 1********
+				// READING CSV FILE AND MAKING OBJECTS
 		        try {
 		              File file = new File("src//pak unis.csv");
 		               Scanner scanner = new Scanner(file);
@@ -201,6 +202,14 @@ public class Main {
 					System.out.println(stack1.pop());
 				}
 			
+				
+				
+				//*********************PROBLEMS*********************
+				
+				
+				
+				//PROBLEM # 1
+				
 				
 			}//end of main function
 }//end of Main class

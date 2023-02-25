@@ -202,14 +202,26 @@ public class Main {
 				//STILL WORKING ON PROBLEMS 
 				
 				//PROBLEM # 1
+				
+				//GETTING KEY FROM USER
 				Scanner scan = new Scanner(System.in);
 				System.out.println("Enter 4 letter keyword: ");
 				String key = scan.nextLine();
-				while(key.length()==4) {
+				//TO CHECK KEY IS 4 LETTER
 				if (key.length()!=4) {
-					System.out.println("Key should be 4 letter");	
+					while(key.length()!=4) {
+						System.out.println("Key should be 4 letter");	
+						System.out.println("Enter Key Again: ");
+						key = scan.nextLine();
+					}
 				}
+				//GIVING DETAILS FOR KEYS
+				if(table.containsKey(key)){
+				Universities obj = (Universities) table.get(key);
+				System.out.println(obj.getName());
 				}
-				
+				else {
+					System.out.println("KEY doesn't exsist");
+				}
 			}//end of main function
 }//end of Main class

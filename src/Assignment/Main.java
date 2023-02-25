@@ -26,8 +26,8 @@ public class Main {
 		                scanner.nextLine();
 
 		                  while (scanner.hasNextLine()) {
-		                	     String line = scanner.nextLine();
-		                	       String[] parts = line.split(",");
+		                	     	 String line = scanner.nextLine();
+		                	     	 String[] parts = line.split(",");
 		                	         String name = parts[0];
 		                	         String wr = parts[1];
 		                	         String ar = parts[2];

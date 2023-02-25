@@ -253,7 +253,7 @@ public class Main {
 		public static void top5pub() {
 			
 			MyStack<String> temp = stack;  // Using temporary stack to avoid data loss
-			System.out.println("TOP 5 UNIVERSITIES ACCORDING TO PUBLICATIONS");
+			System.out.println("\t\t*****TOP 5 UNIVERSITIES ACCORDING TO PUBLICATIONS*****");
 			System.out.println();
 			int j=5;
 			for(int i=0; i<table.size();i++) {
@@ -281,16 +281,15 @@ public class Main {
 		public static void top5pkrank() {
 			
 			MyStack<String> temp = stack1;  // Using temporary stack to avoid data loss
-			System.out.println("TOP 5 UNIVERSITIES ACCORDING TO PAKISTANI RANKING");
+			System.out.println("\t\t*****TOP 5 UNIVERSITIES ACCORDING TO PAKISTANI RANKING*****");
 			System.out.println();
 			int j=5;
 			for(int i=0; i<table.size();i++) {
 				if(i<table.size()-5)
 					{temp.pop();}
 				else {
-					String key=temp.pop();
-					Universities obj = (Universities) table.get(key);
-					System.out.println("Top "+j+" University");
+					Universities obj = (Universities) table.get(temp.pop());
+					System.out.println("Top "+ j +" University");
 					System.out.println("University Name:          " + obj.getName());
 					System.out.println("University World Rank:    " + obj.getWr());
 					System.out.println("University Asia Rank:     " + obj.getAr());

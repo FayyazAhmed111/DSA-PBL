@@ -17,41 +17,8 @@ public class Main {
 	public static MyStack<String> stack = new MyStack<String>(); //Stack with sorted publications
 	public static MyStack<String> stack1 = new MyStack<String>(); //Stack with sorted rank
 	
-		
-	public static void prob1() {
-	
-		//GETTING KEY FROM USER
-		
-			Scanner scan = new Scanner(System.in);
-			System.out.println("Enter 4 letter keyword: ");
-			String key = scan.nextLine();
-			//TO CHECK KEY IS 4 LETTER
-			if (key.length()!=4) {
-				while(key.length()!=4) {
-					System.out.println("Key should be 4 letter");	
-					System.out.println("Enter Key Again: ");
-					key = scan.nextLine();
-				}
-			}
-			//GIVING DETAILS FOR KEYS
-			while(!table.containsKey(key)) {
-				System.out.println("KEY doesn't exsist, Enter key Again: ");
-				key = scan.nextLine();
-				if(key.length()!=4) {
-					System.out.println("Key should be 4 letter");	
-					System.out.println("Enter Key Again: ");
-					key = scan.nextLine();						
-				}
-			}
-			Universities obj = (Universities) table.get(key);
-			System.out.println("OBJECT = " + obj.toString());
-			System.out.println("NAME = " + obj.getName());
-			System.out.println("RANKING = " + obj.getPr());
-			System.out.println("PUBLICATIONS = " + obj.getPub());
-			System.out.println("LOCATION = " + obj.getLoc());
-			
-		}
-	
+
+		// START OF MAIN METHOD
 		public static void main(String[] args) {
 				//********STEP 1********
 				// READING CSV FILE AND MAKING OBJECTS
@@ -204,7 +171,6 @@ public class Main {
 				for(int i=arr.length-1;i>=0;i--) {
 					stack.push((String) arr[i][0]);
 				}
-				
 				//**********STEP 4***********
 				
 				//TO FETCH OBJECTS FROM HASHTABLE INTO ARRAY
@@ -228,7 +194,7 @@ public class Main {
 				Arrays.sort(arr, Comparator.comparingInt(a -> (int)a[1]));
 				
 				//SAVING INTO STACK
-				for(int i=arr.length-1;i>=0;i--) {
+				for(int i=0;i<arr.length;i++) {
 					stack1.push((String) arr[i][0]);
 				}
 				
@@ -237,9 +203,106 @@ public class Main {
 				//STILL WORKING ON PROBLEMS 
 				
 				//PROBLEM # 1
-				prob1();
 				
+			//	searchwithoutcol();
 				
+				//PROBLEM # 2
+				
+				top5pub();
+				top5pkrank();				
 		}//end of main function
 		
+		//********PROBLEM 1********
+		//METHOD TO SEARCH OBJECTS WITHOUT COLLISIONS
+	public static void searchwithoutcol() {
+	
+		//GETTING KEY FROM USER
+		
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Enter 4 letter keyword: ");
+			String key = scan.nextLine();
+			//TO CHECK KEY IS 4 LETTER
+			if (key.length()!=4) {
+				while(key.length()!=4) {
+					System.out.println("Key should be 4 letter");	
+					System.out.println("Enter Key Again: ");
+					key = scan.nextLine();
+				}
+			}
+			//GIVING DETAILS FOR KEYS
+			while(!table.containsKey(key)) {
+				System.out.println("KEY doesn't exsist, Enter key Again: ");
+				key = scan.nextLine();
+				if(key.length()!=4) {
+					System.out.println("Key should be 4 letter");	
+					System.out.println("Enter Key Again: ");
+					key = scan.nextLine();						
+				}
+			}
+			Universities obj = (Universities) table.get(key);
+			System.out.println("OBJECT = " + obj.toString());
+			System.out.println("NAME = " + obj.getName());
+			System.out.println("RANKING = " + obj.getPr());
+			System.out.println("PUBLICATIONS = " + obj.getPub());
+			System.out.println("LOCATION = " + obj.getLoc());
+			
+		}
+		
+		//PROBLEM 2
+		//TOP 5 PUBLICATIONS
+		public static void top5pub() {
+			
+			MyStack<String> temp = stack;  // Using temporary stack to avoid data loss
+			System.out.println("TOP 5 UNIVERSITIES ACCORDING TO PUBLICATIONS");
+			System.out.println();
+			int j=5;
+			for(int i=0; i<table.size();i++) {
+				if(i<table.size()-5)
+					{temp.pop();}
+				else {
+					String key=temp.pop();
+					Universities obj = (Universities) table.get(key);
+					System.out.println();
+					System.out.println("Top "+j+" University");
+					System.out.println("University Name:          " + obj.getName());
+					System.out.println("University World Rank:    " + obj.getWr());
+					System.out.println("University Asia Rank:     " + obj.getAr());
+					System.out.println("University Pakistan Rank: " + obj.getPr());
+					System.out.println("University Publications:  " + obj.getPub());
+					System.out.println("University Locations:     " + obj.getLoc());
+					System.out.println();
+					--j;
+				}
+				
+				}
+			}// END OF TOP5PUB
+		
+		//TOP 5 PAKISTANI RANKED UNIVERSITIES
+		public static void top5pkrank() {
+			
+			MyStack<String> temp = stack1;  // Using temporary stack to avoid data loss
+			System.out.println("TOP 5 UNIVERSITIES ACCORDING TO PAKISTANI RANKING");
+			System.out.println();
+			int j=5;
+			for(int i=0; i<table.size();i++) {
+				if(i<table.size()-5)
+					{temp.pop();}
+				else {
+					String key=temp.pop();
+					Universities obj = (Universities) table.get(key);
+					System.out.println("Top "+j+" University");
+					System.out.println("University Name:          " + obj.getName());
+					System.out.println("University World Rank:    " + obj.getWr());
+					System.out.println("University Asia Rank:     " + obj.getAr());
+					System.out.println("University Pakistan Rank: " + obj.getPr());
+					System.out.println("University Publications:  " + obj.getPub());
+					System.out.println("University Locations:     " + obj.getLoc());
+					System.out.println();
+					--j;
+				}
+				
+				}
+			}//END OF TOP5PKRANK
+		
+	
 }//end of Main class

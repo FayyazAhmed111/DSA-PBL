@@ -17,6 +17,41 @@ public class Main {
 	public static MyStack<String> stack = new MyStack<String>(); //Stack with sorted publications
 	public static MyStack<String> stack1 = new MyStack<String>(); //Stack with sorted rank
 	
+		
+	public static void prob1() {
+	
+		//GETTING KEY FROM USER
+		
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Enter 4 letter keyword: ");
+			String key = scan.nextLine();
+			//TO CHECK KEY IS 4 LETTER
+			if (key.length()!=4) {
+				while(key.length()!=4) {
+					System.out.println("Key should be 4 letter");	
+					System.out.println("Enter Key Again: ");
+					key = scan.nextLine();
+				}
+			}
+			//GIVING DETAILS FOR KEYS
+			while(!table.containsKey(key)) {
+				System.out.println("KEY doesn't exsist, Enter key Again: ");
+				key = scan.nextLine();
+				if(key.length()!=4) {
+					System.out.println("Key should be 4 letter");	
+					System.out.println("Enter Key Again: ");
+					key = scan.nextLine();						
+				}
+			}
+			Universities obj = (Universities) table.get(key);
+			System.out.println("OBJECT = " + obj.toString());
+			System.out.println("NAME = " + obj.getName());
+			System.out.println("RANKING = " + obj.getPr());
+			System.out.println("PUBLICATIONS = " + obj.getPub());
+			System.out.println("LOCATION = " + obj.getLoc());
+			
+		}
+	
 		public static void main(String[] args) {
 				//********STEP 1********
 				// READING CSV FILE AND MAKING OBJECTS
@@ -202,26 +237,9 @@ public class Main {
 				//STILL WORKING ON PROBLEMS 
 				
 				//PROBLEM # 1
+				prob1();
 				
-				//GETTING KEY FROM USER
-				Scanner scan = new Scanner(System.in);
-				System.out.println("Enter 4 letter keyword: ");
-				String key = scan.nextLine();
-				//TO CHECK KEY IS 4 LETTER
-				if (key.length()!=4) {
-					while(key.length()!=4) {
-						System.out.println("Key should be 4 letter");	
-						System.out.println("Enter Key Again: ");
-						key = scan.nextLine();
-					}
-				}
-				//GIVING DETAILS FOR KEYS
-				if(table.containsKey(key)){
-				Universities obj = (Universities) table.get(key);
-				System.out.println(obj.getName());
-				}
-				else {
-					System.out.println("KEY doesn't exsist");
-				}
-			}//end of main function
+				
+		}//end of main function
+		
 }//end of Main class

@@ -1,20 +1,15 @@
 package Assignment;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Hashtable;
-import java.util.Scanner;
-import java.util.Map.Entry;
 
 public class Main {
 	
 	public static ArrayList<Universities> unis = new ArrayList<>(); // list containing object of universities
 	public static Hashtable<String,Universities> table = new Hashtable<>(); // Hash table containing keys and objects
-	public static MyStack<String> stack = new MyStack<String>(); //Stack with sorted publications
-	public static MyStack<String> stack1 = new MyStack<String>(); //Stack with sorted rank
+	public static MyStack<String> pubstack = new MyStack<String>(); //Stack with sorted publications
+	public static MyStack<String> rankstack = new MyStack<String>(); //Stack with sorted rank
 	
 	
 	
@@ -24,21 +19,15 @@ public class Main {
 	public static void main(String[] args) {
 		
 			Steps obj = new Steps();
-			obj.step1(unis);
-			obj.step2(unis, table);
-			obj.step3(table, stack);
-			obj.step4(table, stack1);
+			obj.step1(unis);				//STEP 1 : MAKE OBJECTS OF UNIVERSITIES
+			obj.step2(unis, table);			//STEP 2 : MAKE 4 WORD KEY AND SAVE THEM IN HASHTABLE
+			obj.step3(table, pubstack);		//STEP 3: SORT THEM ACCORDING TO PUBLICATION AND SAVE THEM IN STACK (4-WORD KEY)
+			obj.step4(table, rankstack);	//STEP 4: SORT THEM ACCORDING TO PAKISTAN RANK AND SAVE THEM IN STACK (4-WORD KEY)
 			
 		    Problem1 pb1 = new Problem1();
 		    Problem2 pb2 = new Problem2();
-			//pb1.searchwithoutcol(table);
-			/*pb2.top5(stack, table);
-			System.out.println();
-			pb2.top5(stack1, table);
-			System.out.println();*/			
-			pb2.fiftypercentile(stack, table);
-			pb2.fiftypercentile(stack1, table);
-			
+		    Problem3 pb3 = new Problem3();
+		    
 			
 			
 			

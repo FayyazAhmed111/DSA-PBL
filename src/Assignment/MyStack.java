@@ -56,6 +56,16 @@ public class MyStack<T> {
         return top == null;
     }
 
+    public MyStack<T> duplicate() {
+        MyStack<T> copy = new MyStack<>();
+        Node<T> current = top;
+        while (current != null) {
+            copy.push(current.data);
+            current = current.next;
+        }
+        return copy;
+    }
+    
     // Method to return the size of the stack
     public int size() {
         return size;

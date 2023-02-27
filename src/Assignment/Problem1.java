@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Problem1 {
 	//METHOD TO SEARCH OBJECTS WITHOUT COLLISIONS
-	//****STILL INCOMPLETE*****
+	//****STILL INCOMPLETE COLLISION PART AND GUI OUTPUT PART*****
 	public void searchwithoutcol(Hashtable<String,Universities> table) {
 		
 		//GETTING KEY FROM USER

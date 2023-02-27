@@ -26,9 +26,6 @@ public class Main {
 			
 		    Problem1 pb1 = new Problem1();
 		    Problem2 pb2 = new Problem2();
-		    Problem3 pb3 = new Problem3();
-		    
-			
 			
 			
 	}//end of main method

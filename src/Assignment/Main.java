@@ -26,6 +26,7 @@ public class Main {
 			
 		    Problem1 pb1 = new Problem1();
 		    Problem2 pb2 = new Problem2();
+		    pb1.pb1(table);
 			
 			
 	}//end of main method

@@ -25,9 +25,14 @@ public class Main {
 			obj.step4(table, rankstack);	//STEP 4: SORT THEM ACCORDING TO PAKISTAN RANK AND SAVE THEM IN STACK (4-WORD KEY)
 			
 		    Problem1 pb1 = new Problem1();
+		    Problem2 pb2 = new Problem2();
 		    Problem3 pb3 = new Problem3();
-		    pb3.checkperp(rankstack, table);
-			
+		   //pb1.pb1(table);
+		       pb2.topx(pubstack, table);
+//		     pb3.checkperp(pubstack, table);
+		  
+		    
 	}//end of main method
-
+	
+	
 }//end of Main class

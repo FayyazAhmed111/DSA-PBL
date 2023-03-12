@@ -8,14 +8,17 @@ import javax.swing.table.DefaultTableModel;
 
 
 
-//COLLISION PART INCOMPLETE
+
 public class Problem1 extends JFrame implements ActionListener {
+	
    private JTextField textField;
    private JButton button;
    private JTable table;
    private JScrollPane scrollPane;
    private DefaultTableModel tableModel;
    private Hashtable<String,Universities> tablee = new Hashtable<>();
+   
+   
    public void pb1(Hashtable<String, Universities> tablee) {
 	   this.tablee=tablee;
       setTitle("PBL SW");

@@ -7,8 +7,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 
-
-
 public class Problem1 extends JFrame implements ActionListener {
 	
    private JTextField textField;

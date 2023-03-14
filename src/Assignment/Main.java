@@ -27,10 +27,7 @@ public class Main {
 		    Problem1 pb1 = new Problem1();
 		    Problem2 pb2 = new Problem2();
 		    Problem3 pb3 = new Problem3();
-		   //pb1.pb1(table);
-		       pb2.topx(pubstack, table);
-//		     pb3.checkperp(pubstack, table);
-		  
+		    pb1.pb1(table);
 		    
 	}//end of main method
 	
